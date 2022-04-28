@@ -24,7 +24,7 @@
 Клонировать репозиторий, создать и активировать виртуальное окружение:
 
 ```sh
-git clone https://github.com/Amaterasq/api_yamdb.git
+git clone https://github.com/master-cim/infra_sp2.git
 cd api_yatube
 python -m venv venv
 source venv/Scripts/activate
@@ -66,24 +66,7 @@ python manage.py runserver
 
 <br>
 
-## :bust_in_silhouette: Авторы проекта 
-
-### :small_orange_diamond: Влад Перепечко _(Vlad Vi. Perepechko)_
-```html
-e-mail: perepechcko.vlad@ya.ru
-```
-```html
-https://github.com/Amaterasq
-```
-
-### :small_orange_diamond: Алексей Богов _(Alexey Mi. Bogov)_
-```html
-e-mail: bogov-alexey@yandex.ru
-```
-```html
-https://github.com/BogovAlex
-```
-
+## :bust_in_silhouette: Автор проекта 
 ### :small_orange_diamond: Светлана  Петрова _(Svetlana Yu. Petrova)_
 ```html
 e-mail: master-cim@yandex.ru
