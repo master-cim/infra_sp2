@@ -21,11 +21,15 @@
 
 ## :pencil2: Инструкции по запуску
 
+Извлечь образ или репозиторий из реестра
+```sh
+docker pull mastersup/infra:v1.04.2022
+```
 Клонировать репозиторий, создать и активировать виртуальное окружение:
 
 ```sh
 git clone https://github.com/master-cim/infra_sp2.git
-cd api_yatube
+cd infra_sp2
 python -m venv venv
 source venv/Scripts/activate
 ```
