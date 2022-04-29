@@ -16,26 +16,32 @@
 
 :small_blue_diamond: Python <br>
 :small_blue_diamond: Django <br>
-:small_blue_diamond: Django REST Framework <br><br>
+:small_blue_diamond: Django REST Framework <br>
+:small_blue_diamond: Docker <br>
 
 
 ## :pencil2: Инструкции по запуску
-
-Извлечь образ или репозиторий из реестра
+Для того чтобы развернуть образ на локальной машине, выполнитеследующиедействия.
+1. Авторизоваться через консоль:
+```sh
+docker login -u <имя пользователя>
+```
+2. Загрузка образа с DockerHub
 ```sh
 docker pull mastersup/infra:v1.04.2022
 ```
-Клонировать репозиторий, создать и активировать виртуальное окружение:
-
+3. Проверьте, что образ в системе.
 ```sh
-git clone https://github.com/master-cim/infra_sp2.git
-cd infra_sp2
-python -m venv venv
-source venv/Scripts/activate
+docker images
 ```
-
-Установить зависимости из файла requirements.txt:
-
+4. Запустите Докер-контейнер с этим образом:
+```sh
+docker run -it mastersup/infra:v1.04.2022
+```
+5. Проверьте в отдельном окне bush состояние контейнера:
+```sh
+docker ps
+```
 ```
 pip install -r requirements.txt
 ```
@@ -60,13 +66,18 @@ python manage.py runserver
 
 <br>
 
-## :books: Документация
-Для того чтобы получить, описанные понятным языком эндпоинты и настройки, да ещё с примерами запросов, да ещё с образцами ответов!
-Читай ReDoc, документация в этом формате доступна по ссылке:
+## :books: Переменные среды
+Этот образ использует переменные среды для настройки. Добавьте файл .env в папку infra и заполните переменные необходимыми значениями.
 
-```html
- http://127.0.0.1:8000/redoc/
-```
+|Переменные              |Значение Default               |Описание                                            |
+|------------------------|-------------------------------|----------------------------------------------------|
+|`DB_ENGINE`             |`django.db.backends.postgresql`|Указываем движок БД                                 |
+|`DB_NAME`               |`postgres`                     |Имя базы данных                                     |
+|`POSTGRES_USER`         |no default                     |Логин дляподключения к БД                           |
+|`POSTGRES_PASSWORD`     |no default                     |Пароль для подключения к БД                         |
+|`DB_HOST`               |`db`                           |Название сервиса (контейнера)                       |
+|`DB_PORT`               |5432                           |Порт для подключения к БД                           |
+
 
 <br>
 
@@ -78,4 +89,4 @@ e-mail: master-cim@yandex.ru
 ```html
 https://github.com/master-cim
 ```
-![Svetlana Yu. Petrova](https://scontent-iev1-1.xx.fbcdn.net/v/t1.6435-9/p206x206/101204812_2968762206526462_4647695449438814208_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=da31f3&_nc_ohc=HlW3XVYBr3MAX8bhEGi&_nc_ht=scontent-iev1-1.xx&oh=00_AT-SmL9NzrKGJR1Omw4dt7rbXW-NNr_pcrXXOTM0V5fMuQ&oe=62086683 "Svetlana Yu. Petrova")
+![Svetlana Yu. Petrova](https://sun9-69.userapi.com/s/v1/ig2/xnnSHqXZgIfndCNtTIc6uvOkDxJpBby-YbjsRuwBUMRWD3i70InOYiPjQ2S-7AX74uYWWXo6CYDZbjkFCPGr7Wtl.jpg?size=319x319&quality=96&type=album "Svetlana Yu. Petrova")
